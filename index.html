@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>unkown visibility</title>
+</head>
+<body>
+<h1>Page visibility check by abusing window.requestAnimationFrame</h1>
+
+<p>But really you should be using the <a href="http://www.w3.org/TR/2011/WD-page-visibility-20110602/">Page Visibility API</a>, I'm just playing around here.</p>
+
+<p>Watch the title of this tab for the current visibility state. This works a lot better than the old-school onblur/onfucus solution when it comes to smaller windows on top or multiple screens</p>
+
+<script src="visibility.js"></script>
+<script>
+    function onVisibilityChange(visibility) {
+        if (visibility) {
+            document.title = 'visible';
+        } else {
+            document.title = 'invisible';
+        }
+    }
+</script>
+</body>
+</html>
